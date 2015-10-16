@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cumulogic-app>
+  <single-vm>false</single-vm>
+<application>
+  <application-context>testweb</application-context>
+  <jndi-name></jndi-name>
+  <db-name></db-name>
+  <db-type></db-type>
+<application-file-name>testweb.war</application-file-name>
+ <bind-global-services>true</bind-global-services>
+</application>
+ <services>
+    <framework>
+      <type>Java EE</type>
+      <engine>Tomcat-7.0.12</engine>
+      <no-of-nodes>1</no-of-nodes>
+      <max-nodes>2</max-nodes>
+    </framework>
+    <elastic-load-balancer>
+      <engine>Nginx-1.2</engine>
+    </elastic-load-balancer>
+  </services>
+</cumulogic-app>

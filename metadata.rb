@@ -9,4 +9,4 @@ version '0.1.0'
 depends "apt"
 depends 'java_se', '~> 8.60.9'
 depends 'ark'
-
+depends 'zip'

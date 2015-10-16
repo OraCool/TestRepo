@@ -1,5 +1,9 @@
 default['TestRepo']['jboss_path'] = '/opt'
 default['TestRepo']['jboss_home'] = "#{node['TestRepo']['jboss_path']}/jboss"
-default['TestRepo']['jboss_version'] = "7.0.2"
-default['TestRepo']['jboss_downl_url'] = "http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz"
-default['TestRepo']['jboss_user'] = "jboss_user"
+default['TestRepo']['jboss_version'] = '7.0.2'
+default['TestRepo']['jboss_downl_url'] = 'http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz'
+default['TestRepo']['jboss_user'] = 'jboss_user'
+default['TestRepo']['jboss_app_user'] = 'japp_user'
+default['TestRepo']['jboss_app_user_pass'] = 'japp_user'
+# deafult['TestRepo']['web_app_url'] = 'http://www.cumulogic.com/download/Apps/testweb.zip'
+# deafult['TestRepo']['web_app_name'] = 'testweb'
