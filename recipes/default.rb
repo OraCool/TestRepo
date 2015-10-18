@@ -48,19 +48,19 @@ cookbook_file "#{node['TestRepo']['jboss_home']}/standalone/deployments/testweb.
   group node['TestRepo']['jboss_user']
 end
 
-# service 'jboss' do
-#   supports :start => true, :status => true, :stop => true
-#   start_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/bin/standalone.sh -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"
-#   stop_command "#sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/bin/jboss-admin.sh --connect command=:shutdown "
-#   status_command ""
-#   action :enable 
-# end
-
 service 'jboss' do
-  supports :start => true, :status => true, :stop => true, :restart => true
-  start_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -start"
-  stop_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -stop"
-  restart_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -restart"
-  status_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -status"
+  supports :start => true, :status => true, :stop => true
+  start_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/bin/standalone.sh -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"
+  stop_command "#sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/bin/jboss-admin.sh --connect command=:shutdown "
+  # status_command ""
   action :start 
 end
+
+# service 'jboss' do
+#   supports :start => true, :status => true, :stop => true, :restart => true
+#   start_command "sudo sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -start"
+#   stop_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -stop"
+#   restart_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -restart"
+#   status_command "sudo -u #{node['TestRepo']['jboss_user']} sh #{node['TestRepo']['jboss_home']}/init.d/jboss-as-standalone.sh -status"
+#   action :start 
+# end
